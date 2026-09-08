@@ -1,0 +1,382 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["Hi", "Hello", "Good morning", "Good afternoon", "Hey there", "Muraho", "Oli otya", "Hey UIA bot", "Hi there, I need help"],
+      "responses": ["Hello! Welcome to the Uganda Investment Authority assistant. I can help with investment licenses, business registration, the One Stop Centre, investment opportunities, and more. What would you like help with?"],
+      "context_set": ""
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "Goodbye", "Thanks, that's all", "See you", "Ok thank you, bye", "That's all I needed"],
+      "responses": ["Thank you for reaching out to UIA. Have a great day!"],
+      "context_set": ""
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thank you", "Thanks a lot", "Appreciate it", "Thanks for the help", "That was helpful, thanks"],
+      "responses": ["You're welcome! Let me know if there's anything else you need."],
+      "context_set": ""
+    },
+    {
+      "tag": "affirm",
+      "patterns": ["Yes", "Yeah", "Correct", "That's right", "Sure", "Yes please"],
+      "responses": ["Great, let's continue."],
+      "context_set": ""
+    },
+    {
+      "tag": "deny",
+      "patterns": ["No", "Nope", "Not that", "That's not what I meant", "No thanks"],
+      "responses": ["No problem, could you tell me more about what you need?"],
+      "context_set": ""
+    },
+    {
+      "tag": "fallback",
+      "patterns": [],
+      "responses": ["I'm not sure I understood that. Could you rephrase, or would you like to speak with a UIA officer?"],
+      "context_set": ""
+    },
+    {
+      "tag": "request_human_agent",
+      "patterns": ["I want to talk to a person", "Connect me to an officer", "Can I speak to someone at UIA", "Transfer me to a human", "I need to speak to a real person", "Agent please"],
+      "responses": ["Sure, connecting you to a UIA officer. You can also reach the OSC call center directly for immediate assistance."],
+      "context_set": "human_handoff"
+    },
+    {
+      "tag": "ask_bot_capabilities",
+      "patterns": ["What can you help me with?", "What do you do?", "What services can this chatbot offer?", "How can you assist me?"],
+      "responses": ["I can help with investment licenses, business registration, the One Stop Centre/eBiz platform, investment incentives, sector opportunities, work permits, and general UIA information."],
+      "context_set": ""
+    },
+    {
+      "tag": "about_uia",
+      "patterns": ["What is Uganda Investment Authority?", "What does UIA do?", "Who runs UIA?", "Tell me about UIA", "What is the role of Uganda Investment Authority?"],
+      "responses": ["UIA is the Government agency mandated to promote and facilitate investments in Uganda. It's the first point of contact for investors, offering business registration, licensing, facilitation, and aftercare services through its One Stop Centre."],
+      "context_set": ""
+    },
+    {
+      "tag": "uia_mandate",
+      "patterns": ["What is UIA's role in Uganda?", "Why was UIA created?", "What is UIA's mandate?"],
+      "responses": ["UIA's mandate is to promote, facilitate, and supervise investment in Uganda, and to advise government on investment policy."],
+      "context_set": ""
+    },
+    {
+      "tag": "uia_contact_info",
+      "patterns": ["What is UIA's phone number?", "Where is UIA located?", "UIA email address", "How do I contact UIA?", "Give me UIA's contact details"],
+      "responses": ["You can reach UIA at info@ugandainvest.go.ug or visit the headquarters in Kampala. Would you like the physical OSC address or a regional office?"],
+      "context_set": "awaiting_office_location"
+    },
+    {
+      "tag": "uia_office_hours",
+      "patterns": ["What time is UIA open?", "Working hours of UIA", "When can I visit UIA offices?"],
+      "responses": ["UIA offices are generally open on weekdays during standard government business hours. Please confirm current hours on ugandainvest.go.ug before visiting."],
+      "context_set": ""
+    },
+    {
+      "tag": "osc_physical_location",
+      "patterns": ["Where is the One Stop Centre?", "Physical address of OSC", "Where can I visit the One Stop Centre in person?"],
+      "responses": ["The One Stop Centre is housed at the Uganda Investment Authority headquarters in Kampala. Please check ugandainvest.go.ug for the current exact address before visiting."],
+      "context_set": ""
+    },
+    {
+      "tag": "what_is_investment_license",
+      "patterns": ["What is an investment license?", "Why do I need an investment license?", "Explain investment licenses"],
+      "responses": ["An investment license is a document issued by UIA that legalizes an investment in Uganda. It is mandatory for foreign investors and beneficial for domestic investors, and required for things like work permits and some secondary licenses."],
+      "context_set": ""
+    },
+    {
+      "tag": "license_eligibility",
+      "patterns": ["Am I eligible for an investment license?", "What is the minimum capital required?", "Do I qualify for a license?", "Can I apply for an investment license?"],
+      "responses": ["Eligibility depends on whether you're a foreign or domestic investor. Which one are you?"],
+      "context_set": "awaiting_investor_type"
+    },
+    {
+      "tag": "license_threshold_foreign",
+      "patterns": ["How much capital does a foreign investor need?", "Minimum investment for foreigners", "Capital requirement for foreign companies"],
+      "responses": ["Foreign investors need a capital investment exceeding US$250,000 to be eligible for an investment license."],
+      "context_set": ""
+    },
+    {
+      "tag": "license_threshold_domestic",
+      "patterns": ["How much capital does a Ugandan investor need?", "Minimum investment for local investors", "Capital requirement for domestic companies"],
+      "responses": ["Domestic (Ugandan) investors need a capital investment exceeding US$50,000 to be eligible for an investment license."],
+      "context_set": ""
+    },
+    {
+      "tag": "license_cost",
+      "patterns": ["How much does an investment license cost?", "Is the investment license free?", "What are the fees for a license?"],
+      "responses": ["Investment licenses issued by UIA are free of charge."],
+      "context_set": ""
+    },
+    {
+      "tag": "license_processing_time",
+      "patterns": ["How long does it take to get a license?", "When will I receive my license?", "Processing time for investment license"],
+      "responses": ["Investment licenses are typically processed within a few hours to 48 hours once all required documentation is submitted and satisfactory."],
+      "context_set": ""
+    },
+    {
+      "tag": "license_application_process",
+      "patterns": ["How do I apply for an investment license?", "Steps to get a license", "Where do I apply for a license?", "Application process for investment license"],
+      "responses": ["You can apply for an investment license online through the eBiz platform at ebiz.go.ug, or in person at the UIA One Stop Centre. Would you like the list of required documents?"],
+      "context_set": "license_application_flow"
+    },
+    {
+      "tag": "license_required_documents",
+      "patterns": ["What documents do I need for an investment license?", "Required paperwork for a license", "Documents to apply for investment license"],
+      "responses": ["You'll generally need your certificate of incorporation, a business plan, and proof of capital. Requirements can vary by sector — would you like sector-specific requirements?"],
+      "context_set": "license_application_flow"
+    },
+    {
+      "tag": "license_status_check",
+      "patterns": ["How do I check my license application status?", "Track my application", "Has my license been approved?"],
+      "responses": ["Please share your application reference number so I can help you check the status, or log in to ebiz.go.ug to track it directly."],
+      "context_set": "awaiting_reference_number"
+    },
+    {
+      "tag": "license_renewal",
+      "patterns": ["How do I renew my investment license?", "Does my license expire?", "License renewal process"],
+      "responses": ["Investment licenses generally don't require frequent renewal, but please confirm current renewal policy with a UIA officer for your specific case."],
+      "context_set": ""
+    },
+    {
+      "tag": "sector_specific_license",
+      "patterns": ["Do I need extra licenses for mining?", "Special license for pharmaceuticals", "Additional permits for manufacturing drugs"],
+      "responses": ["Some sectors, such as mining and pharmaceutical manufacturing, require additional regulatory licenses before you can apply for an investment license."],
+      "context_set": "awaiting_sector"
+    },
+    {
+      "tag": "trading_license_requirements",
+      "patterns": ["I want to do trading, what do I need?", "Requirements for a trading license", "Do traders need an investment license?"],
+      "responses": ["Persons intending to engage in trade don't need a UIA investment license, but must prove access to operating capital of at least US$100,000 before obtaining trading licenses and work permit recommendations."],
+      "context_set": ""
+    },
+    {
+      "tag": "how_to_register_business",
+      "patterns": ["How do I register a company in Uganda?", "Steps to start a business", "Business registration process"],
+      "responses": ["Business registration is handled by URSB, accessible through the OSC or eBiz. Would you like the step-by-step process?"],
+      "context_set": "business_registration_flow"
+    },
+    {
+      "tag": "business_registration_authority",
+      "patterns": ["Who registers companies in Uganda?", "Which agency handles business registration?"],
+      "responses": ["Companies in Uganda are registered by the Uganda Registration Services Bureau (URSB), accessible through the OSC."],
+      "context_set": ""
+    },
+    {
+      "tag": "business_name_search",
+      "patterns": ["How do I check if a business name is available?", "Business name search", "Is my company name taken?"],
+      "responses": ["You can search for business name availability through the URSB portal accessible via ebiz.go.ug."],
+      "context_set": ""
+    },
+    {
+      "tag": "tin_registration",
+      "patterns": ["How do I get a TIN?", "Tax Identification Number application", "Steps to register for a TIN"],
+      "responses": ["TIN applications can be processed at any URA office, including the Investor One Stop Centre, or online via the URA website."],
+      "context_set": ""
+    },
+    {
+      "tag": "company_incorporation_requirements",
+      "patterns": ["What documents do I need to incorporate a company?", "Requirements for company incorporation"],
+      "responses": ["You'll typically need a proposed company name, details of directors/shareholders, a registered address, and Memorandum & Articles of Association."],
+      "context_set": ""
+    },
+    {
+      "tag": "foreign_company_branch_registration",
+      "patterns": ["How does a foreign company register a branch in Uganda?", "Branch registration for foreign companies"],
+      "responses": ["A foreign company can register a branch through URSB by submitting its home-country incorporation documents along with local branch registration forms."],
+      "context_set": ""
+    },
+    {
+      "tag": "what_is_osc",
+      "patterns": ["What is the One Stop Centre?", "What services does OSC offer?", "Explain the OSC"],
+      "responses": ["The One Stop Centre (OSC) is a single access point, established under the Investment Act 2019, bringing together 14 government and private-sector agencies to provide investors with licensing, registration, and facilitation services in one place."],
+      "context_set": ""
+    },
+    {
+      "tag": "what_is_ebiz",
+      "patterns": ["What is eBiz?", "How do I use ebiz.go.ug?", "Explain the eBiz platform"],
+      "responses": ["eBiz (ebiz.go.ug) is the online version of the One Stop Centre, letting investors apply for licenses, registrations, and permits digitally from anywhere."],
+      "context_set": ""
+    },
+    {
+      "tag": "ebiz_account_creation",
+      "patterns": ["How do I create an account on eBiz?", "Sign up for eBiz", "eBiz registration steps"],
+      "responses": ["Visit ebiz.go.ug and click 'Register' to create your account using a valid email address and phone number."],
+      "context_set": ""
+    },
+    {
+      "tag": "ebiz_services_list",
+      "patterns": ["What services can I access on eBiz?", "List of eBiz services", "What can I do on the eBiz portal?"],
+      "responses": ["On eBiz you can access company/business registration, TIN registration, KCCA trading licenses, UNBS standards mark applications, land title verification, EIA certificates, investment licenses, and immigration/special pass applications."],
+      "context_set": ""
+    },
+    {
+      "tag": "osc_agencies_present",
+      "patterns": ["Which government agencies are at the OSC?", "What agencies work with UIA at the One Stop Centre?"],
+      "responses": ["The OSC hosts 14 government and private-sector agencies including URSB, URA, KCCA, UNBS, NEMA, and Immigration."],
+      "context_set": ""
+    },
+    {
+      "tag": "osc_online_vs_physical",
+      "patterns": ["Can I do this online or do I have to visit in person?", "Is this service available online?", "Do I need to visit the office physically?"],
+      "responses": ["Most OSC services are available online via eBiz. Some steps, like biometric or document verification, may require an in-person visit."],
+      "context_set": ""
+    },
+    {
+      "tag": "investment_incentives",
+      "patterns": ["What incentives does Uganda offer investors?", "Tax holidays for investors", "Are there tax breaks for investment?"],
+      "responses": ["Uganda offers various incentives including tax holidays, duty exemptions, and capital allowances, which vary by sector and investment size. Would you like incentives for a specific sector?"],
+      "context_set": "awaiting_sector"
+    },
+    {
+      "tag": "incentives_by_sector",
+      "patterns": ["What incentives exist for agriculture?", "Tax incentives for manufacturing", "Incentives for tourism investors"],
+      "responses": ["Incentives vary by sector. Please confirm the sector you're interested in and I'll share the relevant details."],
+      "context_set": ""
+    },
+    {
+      "tag": "why_invest_in_uganda",
+      "patterns": ["Why should I invest in Uganda?", "Advantages of investing in Uganda", "What makes Uganda attractive for investors?"],
+      "responses": ["Uganda offers a strategic East African location, a young workforce, abundant natural resources, and a growing regional market through the EAC."],
+      "context_set": ""
+    },
+    {
+      "tag": "double_taxation_treaties",
+      "patterns": ["Does Uganda have double taxation agreements?", "Tax treaties with other countries"],
+      "responses": ["Yes, Uganda has double taxation agreements with several countries. Please confirm the current list with UIA or the Ministry of Finance for your specific country."],
+      "context_set": ""
+    },
+    {
+      "tag": "repatriation_of_profits",
+      "patterns": ["Can I repatriate profits out of Uganda?", "Sending profits back to my home country"],
+      "responses": ["Yes, Uganda allows investors to repatriate profits, dividends, and capital, subject to standard banking and tax regulations."],
+      "context_set": ""
+    },
+    {
+      "tag": "investment_opportunities_general",
+      "patterns": ["What investment opportunities are available in Uganda?", "Where can I invest in Uganda?"],
+      "responses": ["Key opportunity sectors include agriculture value addition, tourism, mining, ICT, energy, and infrastructure. Which sector interests you?"],
+      "context_set": "awaiting_sector"
+    },
+    {
+      "tag": "sector_opportunities",
+      "patterns": ["Investment opportunities in agriculture", "Opportunities in tourism", "Mining investment opportunities", "ICT investment opportunities in Uganda"],
+      "responses": ["Let me share opportunities for that sector."],
+      "context_set": ""
+    },
+    {
+      "tag": "regional_investment_profiles",
+      "patterns": ["Investment opportunities in Karamoja", "Investing in Teso region", "Buganda investment profile"],
+      "responses": ["Each region of Uganda has a dedicated investment profile. Which region would you like to know about?"],
+      "context_set": "awaiting_region"
+    },
+    {
+      "tag": "industrial_parks_info",
+      "patterns": ["What industrial parks does UIA manage?", "Land in industrial parks", "Tell me about UIA's business parks"],
+      "responses": ["UIA is developing 27 Industrial and Business Parks across Uganda to create jobs, ease access to land, and boost exports."],
+      "context_set": ""
+    },
+    {
+      "tag": "industrial_park_land_application",
+      "patterns": ["How do I apply for land in an industrial park?", "Buying land in a UIA industrial park"],
+      "responses": ["Land applications for industrial parks can be made through UIA's Industrial and Business Parks division. Would you like a specific park's contact details?"],
+      "context_set": "awaiting_park_name"
+    },
+    {
+      "tag": "sme_support_services",
+      "patterns": ["What support does UIA offer small businesses?", "Domestic investor services", "Help for SMEs"],
+      "responses": ["UIA's Domestic Investment Division supports MSMEs and domestic entrepreneurs with registration assistance and advisory services."],
+      "context_set": ""
+    },
+    {
+      "tag": "sme_registration_assistance",
+      "patterns": ["Can UIA help me register my small business?", "SME business registration support"],
+      "responses": ["Yes, UIA assists SMEs with business registration through the One Stop Centre and mobile registration clinics."],
+      "context_set": ""
+    },
+    {
+      "tag": "mobile_registration_clinics",
+      "patterns": ["Are there registration events near me?", "Mobile registration clinics", "Do you hold registration workshops?"],
+      "responses": ["UIA occasionally runs mobile registration clinics during workshops. Please check ugandainvest.go.ug or contact the call center for upcoming dates near you."],
+      "context_set": ""
+    },
+    {
+      "tag": "work_permit_process",
+      "patterns": ["How do I get a work permit for my foreign staff?", "Work permit application process", "Steps to hire a foreign employee"],
+      "responses": ["Work permits are processed through the Directorate of Citizenship and Immigration Control, often supported by a recommendation letter from UIA for licensed investors."],
+      "context_set": ""
+    },
+    {
+      "tag": "special_pass_info",
+      "patterns": ["What is a special pass?", "How do I get a special pass through UIA?"],
+      "responses": ["A special pass is a short-term immigration document that can be facilitated through the OSC while a full work permit is being processed."],
+      "context_set": ""
+    },
+    {
+      "tag": "expatriate_recommendation_letter",
+      "patterns": ["Can UIA recommend me for a work permit?", "UIA recommendation letter for immigration"],
+      "responses": ["Licensed investors can receive recommendations from UIA to support work permit applications with Immigration."],
+      "context_set": ""
+    },
+    {
+      "tag": "land_title_verification",
+      "patterns": ["How do I verify a land title?", "Is this land genuine?", "Land title check"],
+      "responses": ["Land title verification can be done through the Ministry of Lands portal, accessible via the OSC/eBiz platform."],
+      "context_set": ""
+    },
+    {
+      "tag": "eia_certificate",
+      "patterns": ["What is an Environmental Impact Assessment certificate?", "How do I get an EIA certificate?", "Do I need environmental approval?"],
+      "responses": ["An EIA certificate is issued by NEMA for projects with potential environmental impact, and can be applied for through the OSC/eBiz platform."],
+      "context_set": "awaiting_project_type"
+    },
+    {
+      "tag": "business_advisory_services",
+      "patterns": ["I need help expanding my business", "Advisory services for investors", "Business growth support"],
+      "responses": ["UIA's Investor and Business Advisory desks can help you expand your business — reach them through the call center or in person at the OSC."],
+      "context_set": ""
+    },
+    {
+      "tag": "investor_aftercare",
+      "patterns": ["What support exists after I've started operating?", "Post-investment support", "Aftercare services"],
+      "responses": ["UIA offers aftercare services including business advisory support, troubleshooting regulatory issues, and facilitation with government agencies."],
+      "context_set": ""
+    },
+    {
+      "tag": "complaint_registration",
+      "patterns": ["I want to file a complaint", "I'm having a problem with a government agency", "How do I report an issue?"],
+      "responses": ["I'm sorry to hear that. Let me connect you with a UIA officer to log and follow up on your complaint. Could you tell me which agency and briefly describe the issue?"],
+      "context_set": "complaint_flow"
+    },
+    {
+      "tag": "license_free_confirmation",
+      "patterns": ["Is the investment license really free?", "No fees for investment license?"],
+      "responses": ["Yes, investment licenses issued by UIA are free of charge."],
+      "context_set": ""
+    },
+    {
+      "tag": "benefits_of_license",
+      "patterns": ["What are the benefits of having a license?", "Why get an investment license?"],
+      "responses": ["A license adds credibility with banks and partners, is required for some secondary licenses, and helps with work permit acquisition."],
+      "context_set": ""
+    },
+    {
+      "tag": "call_center_hours",
+      "patterns": ["Is the call center 24 hours?", "When can I call UIA?", "Call center working hours"],
+      "responses": ["UIA's OSC call center offers extended support hours — please confirm current hours on ugandainvest.go.ug or ebiz.go.ug."],
+      "context_set": ""
+    },
+    {
+      "tag": "document_download",
+      "patterns": ["Where can I download the application form?", "License application PDF", "Download registration forms"],
+      "responses": ["Application forms and guides are available for download on ugandainvest.go.ug under the Resources/Downloads section."],
+      "context_set": ""
+    },
+    {
+      "tag": "newsletter_subscription",
+      "patterns": ["How do I subscribe to UIA updates?", "Sign up for newsletter", "Get UIA news"],
+      "responses": ["You can subscribe to UIA's newsletter on ugandainvest.go.ug to receive updates on opportunities, news, and events."],
+      "context_set": ""
+    }
+  ]
+}
